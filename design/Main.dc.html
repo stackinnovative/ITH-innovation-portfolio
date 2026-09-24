@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ITH Innovation — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=IBM+Plex+Mono:wght@500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;background:#F3F1EC;color:#15171A}
+a{color:#B9440F;text-decoration:none}a:hover{color:#8E330A}
+.ph{background:repeating-linear-gradient(135deg,#E3DFD6 0 12px,#ECE9E2 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5E6368;letter-spacing:.04em;text-transform:uppercase;text-align:center;padding:12px;box-sizing:border-box}
+.ph-dark{background:repeating-linear-gradient(135deg,#262C33 0 12px,#2C333A 12px 24px);color:#9AA2AA}
+input,select,textarea{font-family:'IBM Plex Sans',sans-serif}
+</style>
+</helmet>
+<div style="width: 1440px; height: 9800px; display: flex; flex-direction: column; background: #F3F1EC; overflow: hidden;">
+
+<!-- Utility bar -->
+<div style="height: 40px; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; background: #15171A; color: #C9CDD1; font-size: 13px;">
+<span>Fabrication · Erection · O&amp;M · Equipment Rental · Heavy Equipment Handling</span>
+<div style="display: flex; gap: 28px; align-items: center;">
+<span>[PHONE NUMBER]</span>
+<span>[EMAIL ADDRESS]</span>
+<span>[CITY, STATE]</span>
+</div>
+</div>
+
+<!-- Nav -->
+<div style="height: 88px; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; background: #FFFFFF; border-bottom: 1px solid #D9D5CC;">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 12px; color: #15171A; flex-shrink: 0;">
+<div style="width: 44px; height: 44px; background: #15171A; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px;">ITH</div>
+<div style="display: flex; flex-direction: column;"><span style="font-family: &quot;Barlow Condensed&quot;, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.02em; line-height: 1">ITH INNOVATION Private Limited</span><span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; color: rgb(84, 90, 97); letter-spacing: 0.08em; margin-top: 4px">ENGINEERING · FABRICATION</span></div>
+</a>
+<div style="display: flex; gap: 28px; align-items: center; font-size: 15px; font-weight: 500;">
+<a href="#fabrication" style="color: #15171A;">Fabrication</a>
+<a href="#erection" style="color: #15171A;">Erection</a>
+<a href="#handling" style="color: #15171A;">Heavy Handling</a>
+<a href="#om" style="color: #15171A;">O&amp;M</a>
+<a href="#rental" style="color: #15171A;">Equipment Rental</a>
+<span style="width: 1px; height: 20px; background: #D9D5CC;"></span>
+<a href="Projects.dc.html" style="color: #15171A;">Projects</a>
+<a href="#contact" style="color: #15171A;">Contact</a>
+</div>
+<a href="#contact" style="height: 48px; padding: 0 24px; display: flex; align-items: center; gap: 10px; background: {{accent}}; color: #FFFFFF; font-weight: 600; font-size: 15px; flex-shrink: 0;">Request a Quote
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+
+<!-- Hero -->
+<div style="padding: 72px 64px 64px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; background: #FFFFFF;">
+<div style="display: flex; flex-direction: column; justify-content: center; gap: 28px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #B9440F;">FABRICATE · ERECT · LIFT · MAINTAIN · RENT</div>
+<h1 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 92px; line-height: .95; letter-spacing: -.01em; text-transform: uppercase;">We build the steel that keeps plants running.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3E444A; max-width: 580px;">We fabricate equipment and structures, erect them at site, move and lift heavy loads, maintain running plants, and rent out the tools to do it — one team, start to finish.</p>
+<div style="display: flex; gap: 16px; align-items: center;">
+<a href="#contact" style="height: 56px; padding: 0 28px; display: flex; align-items: center; gap: 10px; background: {{accent}}; color: #FFFFFF; font-weight: 600; font-size: 16px;">Request a Quote
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+<a href="#services" style="height: 56px; padding: 0 28px; display: flex; align-items: center; border: 1.5px solid #15171A; color: #15171A; font-weight: 600; font-size: 16px;">Our 5 Services</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid #D9D5CC; margin-top: 12px;">
+<div style="padding: 20px 16px 0 0; display: flex; flex-direction: column; gap: 4px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 40px;">[XX]+</span>
+<span style="font-size: 13px; color: #545A61;">Years in the field</span>
+</div>
+<div style="padding: 20px 16px 0; border-left: 1px solid #D9D5CC; display: flex; flex-direction: column; gap: 4px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 40px;">59</span>
+<span style="font-size: 13px; color: #545A61;">Client projects</span>
+</div>
+<div style="padding: 20px 16px 0; border-left: 1px solid #D9D5CC; display: flex; flex-direction: column; gap: 4px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 40px;">15</span>
+<span style="font-size: 13px; color: #545A61;">Industries served</span>
+</div>
+<div style="padding: 20px 0 0 16px; border-left: 1px solid #D9D5CC; display: flex; flex-direction: column; gap: 4px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 40px;">400 T</span>
+<span style="font-size: 13px; color: #545A61;">Jacking capacity</span>
+</div>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 380px 220px; gap: 12px;">
+<div class="ph" style="grid-column: span 2;">Photo: large vessel being erected at site</div>
+<div class="ph">Photo: fabrication shop floor</div>
+<div style="background: #15171A; color: #FFFFFF; padding: 28px; display: flex; flex-direction: column; justify-content: space-between;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em; color: #F08A55;">24×7 SHUTDOWN SUPPORT</span>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px; line-height: 1.05;">Emergency or annual shutdown?</span>
+<span style="font-size: 15px; color: #C9CDD1;">Call [PHONE NUMBER]</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Client strip -->
+<div style="padding: 36px 64px; display: flex; align-items: center; gap: 48px; border-top: 1px solid #D9D5CC; border-bottom: 1px solid #D9D5CC; background: #F3F1EC;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em; color: #545A61; width: 160px; flex-shrink: 0;">PROJECTS DELIVERED FOR</span>
+<div style="display: flex; flex-wrap: wrap; gap: 14px 40px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 22px; color: #3E444A; letter-spacing: .02em;">
+<span>ISRO</span><span>KUDANKULAM NPP</span><span>KALPAKKAM APP</span><span>L&amp;T</span><span>ULTRATECH</span><span>ACC CEMENT</span><span>SAINT-GOBAIN</span><span>HYUNDAI MOTORS</span><span>FORD INDIA</span><span>NLC</span><span>COROMANDEL</span>
+</div>
+</div>
+
+<!-- Services overview -->
+<div id="services" style="padding: 104px 64px; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #B9440F;">OUR SERVICES</span>
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: 1; text-transform: uppercase; max-width: 780px;">Five services. One team on your site.</h2>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3E444A; max-width: 460px;">Hire us for one job, or for the whole cycle — we make it, install it, move it, keep it running, and supply the kit.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px;">
+<sc-for list="{{services}}" as="s" hint-placeholder-count="5">
+<a href="{{s.href}}" style="background: #FFFFFF; border: 1px solid #D9D5CC; display: flex; flex-direction: column; color: #15171A;">
+<div class="ph" style="height: 180px;">{{s.photo}}</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B9440F;">{{s.num}}</span>
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.05; text-transform: uppercase;">{{s.title}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #3E444A; flex-grow: 1;">{{s.body}}</span>
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; color: #B9440F;">Learn more
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</span>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+
+<!-- 01 Fabrication -->
+<div id="fabrication" style="padding: 104px 64px; background: #FFFFFF; display: flex; flex-direction: column; gap: 40px; border-top: 1px solid #D9D5CC;">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #B9440F;">SERVICE 01 · FABRICATION</span>
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: 1; text-transform: uppercase;">28 products. Built to your drawing.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3E444A; max-width: 620px;">Process equipment, storage and structures in MS and SS — made in our workshop, tested, and ready for site.</p>
+</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; max-width: 620px;">
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="5">
+<button type="button" onClick="{{c.pick}}" style="{{c.chipStyle}}">{{c.label}} <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; opacity: .75;">{{c.count}}</span></button>
+</sc-for>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: #D9D5CC; border: 1px solid #D9D5CC;">
+<sc-for list="{{visibleProducts}}" as="it" hint-placeholder-count="12">
+<div style="background: #FFFFFF; padding: 24px; display: flex; gap: 18px; align-items: flex-start; min-height: 64px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8F94; padding-top: 4px; width: 24px;">{{it.num}}</span>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.1;">{{it.name}}</span>
+<span style="font-size: 13px; color: #545A61;">{{it.cat}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 32px; padding: 28px 36px; border: 1.5px solid #15171A;">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase;">Have a drawing or spec sheet?</span>
+<span style="font-size: 15px; color: #545A61;">Send it with size, material and quantity. We quote from the drawing. [IBR pressure parts — CONFIRM IF STILL OFFERED]</span>
+</div>
+<a href="#contact" style="height: 52px; padding: 0 24px; display: flex; align-items: center; background: {{accent}}; color: #FFFFFF; font-weight: 600; flex-shrink: 0;">Get a fabrication quote</a>
+</div>
+</div>
+
+<!-- 02 Erection -->
+<div id="erection" style="padding: 104px 64px; display: grid; grid-template-columns: 5fr 7fr; gap: 64px; border-top: 1px solid #D9D5CC;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div class="ph" style="height: 420px;">Photo: tank / structure erection with derrick</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+<div class="ph" style="height: 180px;">Photo: chimney erection</div>
+<div class="ph" style="height: 180px;">Photo: shed / PEB structure</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 28px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #B9440F;">SERVICE 02 · ERECTION</span>
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: 1; text-transform: uppercase;">From workshop to foundation. Installed right.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3E444A;">We erect what we fabricate — and what others fabricate. Our own crew, lifting gear and supervision on site.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; border-top: 2px solid #15171A;">
+<sc-for list="{{erectScope}}" as="e" hint-placeholder-count="8">
+<div style="display: flex; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid #D9D5CC; font-size: 16px; font-weight: 500;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B9440F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>
+<span>{{e}}</span>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em; color: #545A61;">HOW A JOB RUNS</span>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+<sc-for list="{{steps}}" as="st" hint-placeholder-count="4">
+<div style="padding: 18px; background: #FFFFFF; border: 1px solid #D9D5CC; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; color: #B9440F; line-height: 1;">{{st.n}}</span>
+<span style="font-weight: 600; font-size: 15px;">{{st.t}}</span>
+<span style="font-size: 13px; color: #545A61; line-height: 1.5;">{{st.d}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 03 Heavy Equipment Handling -->
+<div id="handling" style="padding: 104px 64px; background: #1C2126; color: #FFFFFF; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #F08A55;">SERVICE 03 · HEAVY EQUIPMENT HANDLING</span>
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: 1; text-transform: uppercase;">Heavy loads moved safely. Inside the plant or across the state.</h2>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #C9CDD1;">Lifting, jacking, skidding, shifting and transport of heavy machinery and equipment — planned, rigged and moved by our own team.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: #353C44; border: 1px solid #353C44;">
+<div style="background: #1C2126; padding: 28px; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 56px; line-height: 1; color: #F08A55;">400 T</span>
+<span style="font-size: 15px; color: #C9CDD1;">Hydraulic jacks</span>
+</div>
+<div style="background: #1C2126; padding: 28px; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 56px; line-height: 1; color: #F08A55;">100 T</span>
+<span style="font-size: 15px; color: #C9CDD1;">Motorised winches</span>
+</div>
+<div style="background: #1C2126; padding: 28px; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 56px; line-height: 1; color: #F08A55;">[XX] T</span>
+<span style="font-size: 15px; color: #C9CDD1;">Hydraulic crane capacity</span>
+</div>
+<div style="background: #1C2126; padding: 28px; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 56px; line-height: 1; color: #F08A55;">[XX] m</span>
+<span style="font-size: 15px; color: #C9CDD1;">Boom lift working height</span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em; color: #9AA2AA;">WHAT WE HANDLE</span>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #454D56;">
+<sc-for list="{{handleScope}}" as="h" hint-placeholder-count="6">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid #353C44;">
+<span style="font-size: 17px; font-weight: 500;">{{h.t}}</span>
+<span style="font-size: 14px; color: #9AA2AA; text-align: right;">{{h.d}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em; color: #9AA2AA;">OUR FLEET</span>
+<sc-for list="{{fleet}}" as="v" hint-placeholder-count="3">
+<div style="display: flex; background: #242A30; border: 1px solid #353C44;">
+<div class="ph ph-dark" style="width: 170px; height: 120px; flex-shrink: 0;">Photo</div>
+<div style="padding: 20px 24px; display: flex; flex-direction: column; gap: 6px; justify-content: center;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 26px; text-transform: uppercase;">{{v.name}}</span>
+<span style="font-size: 14px; color: #9AA2AA;">{{v.spec}}</span>
+</div>
+</div>
+</sc-for>
+<a href="#contact" style="height: 52px; display: flex; align-items: center; justify-content: center; background: {{accent}}; color: #FFFFFF; font-weight: 600;">Plan a lift or shift</a>
+</div>
+</div>
+</div>
+
+<!-- 04 O&M -->
+<div id="om" style="padding: 104px 64px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: center;">
+<div class="ph" style="height: 460px;">Photo: shutdown crew inside kiln / boiler</div>
+<div style="display: flex; flex-direction: column; gap: 24px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #B9440F;">SERVICE 04 · OPERATION &amp; MAINTENANCE</span>
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: 1; text-transform: uppercase;">Shutdowns done on schedule.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3E444A;">We take on O&amp;M contracts, emergency shutdowns and annual shutdowns — with our own crew, tools and cranes, so your plant is back online faster.</p>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+<div style="padding: 16px; background: #FFFFFF; border: 1px solid #D9D5CC; display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 600;">O&amp;M contracts</span><span style="font-size: 13px; color: #545A61;">Long-term upkeep</span></div>
+<div style="padding: 16px; background: #FFFFFF; border: 1px solid #D9D5CC; display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 600;">Emergency shutdowns</span><span style="font-size: 13px; color: #545A61;">Rapid mobilisation</span></div>
+<div style="padding: 16px; background: #FFFFFF; border: 1px solid #D9D5CC; display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 600;">Annual shutdowns</span><span style="font-size: 13px; color: #545A61;">Planned turnarounds</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em; color: #545A61;">PLANTS WE MAINTAIN</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<span style="padding: 8px 14px; border: 1px solid #B8B2A6; font-size: 14px;">Cement</span>
+<span style="padding: 8px 14px; border: 1px solid #B8B2A6; font-size: 14px;">Carbon</span>
+<span style="padding: 8px 14px; border: 1px solid #B8B2A6; font-size: 14px;">Glass</span>
+<span style="padding: 8px 14px; border: 1px solid #B8B2A6; font-size: 14px;">Chemical</span>
+<span style="padding: 8px 14px; border: 1px solid #B8B2A6; font-size: 14px;">Paper</span>
+<span style="padding: 8px 14px; border: 1px solid #B8B2A6; font-size: 14px;">Sugar</span>
+<span style="padding: 8px 14px; border: 1px solid #B8B2A6; font-size: 14px;">Textile</span>
+</div>
+</div>
+<a href="#contact" style="align-self: flex-start; height: 52px; padding: 0 24px; display: flex; align-items: center; background: {{accent}}; color: #FFFFFF; font-weight: 600;">Plan a shutdown</a>
+</div>
+</div>
+
+<!-- 05 Equipment Rental -->
+<div id="rental" style="padding: 104px 64px; background: #FFFFFF; border-top: 1px solid #D9D5CC; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #B9440F;">SERVICE 05 · EQUIPMENT RENTAL</span>
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: 1; text-transform: uppercase;">Rent the kit. Skip the capex.</h2>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3E444A; max-width: 440px;">Lifting, welding, cutting and site equipment — the same kit our own crews use, maintained in our yard.</p>
+</div>
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; border-top: 2px solid #15171A; align-content: start;">
+<sc-for list="{{tools}}" as="t" hint-placeholder-count="18">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid #D9D5CC;">
+<span style="font-size: 16px; font-weight: 500;">{{t.name}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #545A61; text-align: right;">{{t.spec}}</span>
+</div>
+</sc-for>
+</div>
+<div style="background: #F3F1EC; border: 1px solid #D9D5CC; padding: 32px; display: flex; flex-direction: column; gap: 20px; align-self: start;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase;">Rental terms</span>
+<div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px;">
+<div style="display: flex; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #D9D5CC;"><span style="color: #545A61;">Hire period</span><span style="font-weight: 600;">Daily · Weekly · Monthly</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #D9D5CC;"><span style="color: #545A61;">Operator</span><span style="font-weight: 600;">[With / without — CONFIRM]</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #D9D5CC;"><span style="color: #545A61;">Delivery</span><span style="font-weight: 600;">[To site — CONFIRM]</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px;"><span style="color: #545A61;">Cranes &amp; boom lifts</span><span style="font-weight: 600;">Also on hire</span></div>
+</div>
+<a href="#contact" style="height: 52px; display: flex; align-items: center; justify-content: center; background: {{accent}}; color: #FFFFFF; font-weight: 600;">Check availability</a>
+</div>
+</div>
+</div>
+
+<!-- Industries (proof) -->
+<div style="padding: 104px 64px; background: #1C2126; color: #FFFFFF; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #F08A55;">INDUSTRIES SERVED</span>
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: 1; text-transform: uppercase; max-width: 780px;">From launch pads to distilleries.</h2>
+</div>
+<a href="Projects.dc.html" style="height: 52px; padding: 0 24px; display: flex; align-items: center; gap: 10px; border: 1.5px solid #FFFFFF; color: #FFFFFF; font-weight: 600;">View all 59 projects
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; background: #353C44; border: 1px solid #353C44;">
+<sc-for list="{{sectors}}" as="s" hint-placeholder-count="15">
+<a href="Projects.dc.html" style="background: #1C2126; padding: 28px 24px; display: flex; flex-direction: column; gap: 20px; color: #FFFFFF; min-height: 140px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F08A55;">{{s.countLabel}}</span>
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 26px; line-height: 1.1; text-transform: uppercase;">{{s.name}}</span>
+<span style="font-size: 13px; color: #9AA2AA; line-height: 1.5;">{{s.sample}}</span>
+</a>
+</sc-for>
+</div>
+</div>
+
+<!-- Enquiry -->
+<div id="contact" style="padding: 104px 64px; background: #15171A; color: #FFFFFF; display: grid; grid-template-columns: 5fr 7fr; gap: 72px;">
+<div style="display: flex; flex-direction: column; gap: 28px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #F08A55;">REQUEST A QUOTE</span>
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 64px; line-height: 1; text-transform: uppercase;">Tell us what the job is.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #C9CDD1;">Share your drawing, lift details or shutdown scope. We reply within [X] working hours.</p>
+<div style="display: flex; flex-direction: column; gap: 18px; padding-top: 12px; border-top: 1px solid #353C44;">
+<div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #9AA2AA;">PHONE / WHATSAPP</span><span style="font-size: 20px; font-weight: 500;">[PHONE NUMBER]</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #9AA2AA;">EMAIL</span><span style="font-size: 20px; font-weight: 500;">[EMAIL ADDRESS]</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #9AA2AA;">WORKSHOP &amp; YARD</span><span style="font-size: 17px; line-height: 1.5;">[FULL ADDRESS]</span></div>
+</div>
+</div>
+<form style="background: #FFFFFF; color: #15171A; padding: 44px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600;">Name<input type="text" placeholder="Your name" style="height: 50px; padding: 0 14px; border: 1px solid #B8B2A6; font-size: 16px;"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600;">Company<input type="text" placeholder="Company name" style="height: 50px; padding: 0 14px; border: 1px solid #B8B2A6; font-size: 16px;"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600;">Phone<input type="tel" placeholder="+91" style="height: 50px; padding: 0 14px; border: 1px solid #B8B2A6; font-size: 16px;"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600;">Email<input type="email" placeholder="you@company.com" style="height: 50px; padding: 0 14px; border: 1px solid #B8B2A6; font-size: 16px;"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; grid-column: span 2;">Service needed
+<select style="height: 50px; padding: 0 14px; border: 1px solid #B8B2A6; font-size: 16px; background: #FFFFFF;">
+<option>Fabrication</option>
+<option>Erection</option>
+<option>Heavy Equipment Handling</option>
+<option>Operation &amp; Maintenance / shutdown</option>
+<option>Equipment Rental</option>
+</select>
+</label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; grid-column: span 2;">Details<textarea rows="5" placeholder="Equipment, weight or size, material, site location, timeline" style="padding: 14px; border: 1px solid #B8B2A6; font-size: 16px; resize: vertical;"></textarea></label>
+<div style="grid-column: span 2; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+<label style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #3E444A; min-height: 44px; padding: 0 16px; border: 1px dashed #B8B2A6; cursor: pointer;"><input type="file" style="width: 1px; height: 1px; opacity: 0;">Attach drawing (PDF / DWG)</label>
+<button type="button" style="height: 56px; padding: 0 32px; background: {{accent}}; color: #FFFFFF; border: 0; font-size: 16px; font-weight: 600; cursor: pointer;">Send Enquiry</button>
+</div>
+</form>
+</div>
+
+<!-- Footer -->
+<div style="flex-grow: 1; padding: 64px 64px 40px; background: #0F1113; color: #C9CDD1; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; color: #FFFFFF;">ITH INNOVATION</span>
+<span style="font-size: 15px; line-height: 1.6; max-width: 380px;">Fabrication, erection, heavy equipment handling, O&amp;M and equipment rental for Indian industry.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A9199; letter-spacing: .1em;">SERVICES</span>
+<a href="#fabrication" style="color: #C9CDD1;">Fabrication</a>
+<a href="#erection" style="color: #C9CDD1;">Erection</a>
+<a href="#handling" style="color: #C9CDD1;">Heavy Equipment Handling</a>
+<a href="#om" style="color: #C9CDD1;">Operation &amp; Maintenance</a>
+<a href="#rental" style="color: #C9CDD1;">Equipment Rental</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A9199; letter-spacing: .1em;">COMPANY</span>
+<a href="Projects.dc.html" style="color: #C9CDD1;">Projects</a>
+<a href="#contact" style="color: #C9CDD1;">Contact</a>
+<span>[Certifications]</span>
+<span>[Careers]</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A9199; letter-spacing: .1em;">CONTACT</span>
+<span>[PHONE NUMBER]</span>
+<span>[EMAIL ADDRESS]</span>
+<span>[CITY, STATE]</span>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid #2A2F35; font-size: 13px; color: #8A9199;">
+<span>© 2026 ITH Innovation. All rights reserved.</span>
+<span>GSTIN [XXXXXXXXXXXXXXX]</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#B9440F","options":["#B9440F","#1F5FA8","#2F6B3A","#15171A"]},"$preview":{"width":1440,"height":9800}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { cat: 'All' }; }
+  renderVals() {
+    var accent = this.props.accent ?? '#B9440F';
+    var services = [
+      { num: '01', title: 'Fabrication', body: 'Vessels, reactors, heat exchangers, silos, tanks and 23 more products in MS and SS.', href: '#fabrication', photo: 'Photo: workshop' },
+      { num: '02', title: 'Erection', body: 'Site erection of structures, tanks, silos, chimneys, vessels and piping.', href: '#erection', photo: 'Photo: site erection' },
+      { num: '03', title: 'Heavy Equipment Handling', body: 'Lifting, jacking, skidding, shifting and transport of heavy loads.', href: '#handling', photo: 'Photo: crane lift' },
+      { num: '04', title: 'O&M', body: 'O&M contracts plus emergency and annual shutdowns for process plants.', href: '#om', photo: 'Photo: shutdown crew' },
+      { num: '05', title: 'Equipment Rental', body: 'Winches, jacks, welding sets, rolling machines and site kit on hire.', href: '#rental', photo: 'Photo: equipment yard' }
+    ];
+    var P = 'Pressure & Process', S = 'Storage & Handling', A = 'Air & Gas Handling', T = 'Structures & Heavy';
+    var raw = [
+      ['Vessels', P], ['Reactors', P], ['Industrial Sheds & Built-Up Structures', T], ['Heavy Equipment', T],
+      ['Dryers', P], ['Piping & Allied Equipment', A], ['Storage Tanks', S], ['Launching Pads', T],
+      ['Storage Silos (MS / SS)', S], ['Heavy Sliding Doors', T], ['Bag Filters & ESP', A], ['Chimneys / Stacks', A],
+      ['Chutes', S], ['Dish Ends', P], ['Hot Gas Filters', A], ['Heat Exchangers', P],
+      ['Evaporators', P], ['Furnaces', P], ['Cartridge Filter Tanks', S], ['Dampers', A],
+      ['Bunkers', S], ['Distillation Columns', P], ['Expansion Bellows', P], ['Hoppers', S],
+      ['Paint Booths (Automobile)', T], ['Drying Towers', P], ['Absorption Towers', P], ['Digesters', P]
+    ];
+    var products = raw.map(function (r, i) { return { name: r[0], cat: r[1], num: (i < 9 ? '0' : '') + (i + 1) }; });
+    var self = this, cur = this.state.cat;
+    var cats = ['All', P, S, A, T].map(function (c) {
+      var on = c === cur;
+      return {
+        label: c,
+        count: c === 'All' ? products.length : products.filter(function (p) { return p.cat === c; }).length,
+        pick: function () { self.setState({ cat: c }); },
+        chipStyle: 'height: 44px; padding: 0 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; border: 1.5px solid #15171A; background: ' + (on ? '#15171A' : '#FFFFFF') + '; color: ' + (on ? '#FFFFFF' : '#15171A') + ';'
+      };
+    });
+    var visibleProducts = cur === 'All' ? products : products.filter(function (p) { return p.cat === cur; });
+    var erectScope = [
+      'Industrial sheds & built-up structures', 'Storage tanks (jacking method)', 'Silos, bunkers & hoppers', 'Chimneys & stacks',
+      'Vessels, reactors & columns', 'Piping & ducting', 'Bag filters & ESP', 'Heavy sliding doors'
+    ];
+    var steps = [
+      { n: '01', t: 'Site survey', d: 'Scope, loads and method statement' },
+      { n: '02', t: 'Mobilise', d: 'Crew, derricks, winches, cranes' },
+      { n: '03', t: 'Erect & align', d: 'Lifting, welding, alignment' },
+      { n: '04', t: 'Hand over', d: 'Checks, testing, sign-off' }
+    ];
+    var handleScope = [
+      { t: 'Machinery shifting', d: 'Within plant or to new site' },
+      { t: 'Loading & unloading', d: 'Heavy and over-size items' },
+      { t: 'Jacking & skidding', d: 'Jacks up to 400 T, skid rollers' },
+      { t: 'Winching & pulling', d: 'Winches up to 100 T' },
+      { t: 'Crane lifts', d: 'Hydraulic cranes, derricks' },
+      { t: 'Heavy transport', d: 'Trailers for ODC loads [CONFIRM]' }
+    ];
+    var fleet = [
+      { name: 'Hydraulic Cranes', spec: 'Capacity [XX] T – [XX] T' },
+      { name: 'Boom Lifts', spec: 'Working height up to [XX] m' },
+      { name: 'Transport Vehicles', spec: 'Trailers / trucks [CONFIRM TYPES]' }
+    ];
+    var sectors = [
+      ['Aerospace', 1, 'ISRO'], ['Nuclear Power', 2, 'Kudankulam NPP, Kalpakkam APP'], ['Thermal Power', 6, 'NLC, BGR Energy, Lanco'],
+      ['Cement', 2, 'ACC, UltraTech (L&T)'], ['Chemical', 8, 'Coromandel, Kamar, Krishna'], ['Water & Effluent', 1, 'Quality Water Management'],
+      ['Hydrocarbon & Refineries', 6, 'Andhra Petrochemicals, Airoil-Flaregas'], ['Carbon & Carbon Black', 3, 'Epsilon, Phillips Carbon'], ['Sugar & Distilleries', 7, 'Kothari Sugars, Shaw Wallace'],
+      ['Steel', 4, 'Kanishk, VKG, SISCOL'], ['Textile', 2, 'Loyal Textile, Valli Mills'], ['Pharma & Drugs', 4, 'Malladi, Aswini Bio-Pharma'],
+      ['Glass', 1, 'Saint-Gobain Glass India'], ['Automobile', 5, 'Hyundai, Ford, Visteon'], ['Heavy Engineering', 7, 'L&T, Chennai Harbour']
+    ].map(function (s) { return { name: s[0], countLabel: (s[1] < 10 ? '0' : '') + s[1] + (s[1] === 1 ? ' PROJECT' : ' PROJECTS'), sample: s[2] }; });
+    var tools = [
+      ['Motorised Winches', 'up to 100 T'], ['Hydraulic Jacks', 'up to 400 T'], ['Tank Jacks', '2.5 m / 12 T'], ['Chain Pulley Blocks', 'up to 10 T'],
+      ['Wire Rope Pulleys', 'up to 5 sheave'], ['Derricks / Leading Beams', '—'], ['Skid Rollers', '—'], ['Hydraulic Power Packs', '—'],
+      ['Rolling Machine', 'up to 36 mm · MS/SS'], ['Plasma Cutting Machine', '—'], ['Radial Drilling Machine', '—'], ['Air Compressor', 'up to 40 HP'],
+      ['Welding Generators', 'K320'], ['Welding Rectifiers', 'MIG / TIG'], ['Welding Inverters', '—'], ['Fabrication Tools', 'full set'],
+      ['Site Containers', 'office / stairs'], ['CC Cribs / Sleepers / Rails', '—']
+    ].map(function (t) { return { name: t[0], spec: t[1] }; });
+    return { accent: accent, services: services, cats: cats, visibleProducts: visibleProducts, erectScope: erectScope, steps: steps, handleScope: handleScope, fleet: fleet, sectors: sectors, tools: tools };
+  }
+}
+</script>
+</body>
+</html>
