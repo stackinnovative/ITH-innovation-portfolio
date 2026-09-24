@@ -18,12 +18,11 @@ export const sectionIds = {
 export const routes = {
   home: "/",
   projects: "/projects",
-  contact: "/#contact",
+  contact: "/contact",
 } as const;
 
-// Phase 3: switch to `/services/${slug}` once the service pages exist.
 export function serviceHref(slug: ServiceSlug) {
-  return `/#${serviceAnchors[slug]}`;
+  return `/services/${slug}`;
 }
 
 export const serviceNav = services.map((s) => ({

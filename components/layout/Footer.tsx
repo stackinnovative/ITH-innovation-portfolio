@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { company, footer, services, ui } from "@/content/site";
+import { company, footer, serviceLongTitles, services, ui } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { mailHref, routes, serviceHref, telHref } from "@/lib/links";
@@ -36,7 +36,7 @@ export function Footer() {
             {services.map((s) => (
               <li key={s.slug}>
                 <Link href={serviceHref(s.slug)} className={linkClass}>
-                  {footer.serviceLabels[s.slug]}
+                  {serviceLongTitles[s.slug]}
                 </Link>
               </li>
             ))}

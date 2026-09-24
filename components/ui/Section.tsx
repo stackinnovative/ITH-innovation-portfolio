@@ -16,6 +16,8 @@ type SectionProps = {
   surface?: keyof typeof surfaces;
   /** 1px line on top, as between light sections in the design. */
   borderTop?: boolean;
+  /** Shorter band (48px / 56px) for strips between full sections. */
+  compact?: boolean;
   className?: string;
   containerClassName?: string;
 };
@@ -27,6 +29,7 @@ export function Section({
   labelledBy,
   surface = "ground",
   borderTop = false,
+  compact = false,
   className,
   containerClassName,
 }: SectionProps) {
@@ -36,7 +39,12 @@ export function Section({
       id={id}
       aria-labelledby={labelledBy}
       data-surface={dark ? "dark" : undefined}
-      className={cn(surfaces[surface], borderTop && "border-t border-line", "py-12 md:py-18 lg:py-26", className)}
+      className={cn(
+        surfaces[surface],
+        borderTop && "border-t border-line",
+        compact ? "py-12 md:py-14" : "py-12 md:py-18 lg:py-26",
+        className,
+      )}
     >
       <Container className={containerClassName}>{children}</Container>
     </section>

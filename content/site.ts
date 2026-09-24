@@ -217,16 +217,18 @@ export const contactLabels = {
   address: "Workshop & Yard",
 };
 
+/** Full service names: footer links, service page H1s and page titles. */
+export const serviceLongTitles: Record<ServiceSlug, string> = {
+  fabrication: "Fabrication",
+  erection: "Erection",
+  "heavy-equipment-handling": "Heavy Equipment Handling",
+  "operation-maintenance": "Operation & Maintenance",
+  "equipment-rental": "Equipment Rental",
+};
+
 export const footer = {
   blurb: "Fabrication, erection, heavy equipment handling, O&M and equipment rental for Indian industry.",
   headings: { services: "Services", company: "Company", contact: "Contact" },
-  serviceLabels: {
-    fabrication: "Fabrication",
-    erection: "Erection",
-    "heavy-equipment-handling": "Heavy Equipment Handling",
-    "operation-maintenance": "Operation & Maintenance",
-    "equipment-rental": "Equipment Rental",
-  } satisfies Record<ServiceSlug, string>,
   companyPlaceholders: ["[Certifications]", "[Careers]"],
   rights: "All rights reserved.",
   gstinLabel: "GSTIN",
@@ -354,3 +356,30 @@ export const projectCountLabel = (n: number) =>
 
 /** Total client projects across all sectors (59). */
 export const totalProjects = sectors.reduce((sum, s) => sum + s.clients.length, 0);
+
+// ---------- Service pages (/services/[slug]) ----------
+// Hero reuses existing copy: "Our services · 01", the full service name, and the service summary.
+export const servicePage = {
+  eyebrow: (num: string) => `${home.services.eyebrow} · ${num}`,
+};
+
+// ---------- Projects page (from design/Projects.dc.html) ----------
+export const projectsPage = {
+  eyebrow: `Projects · ${sectors.length} industries`,
+  title: "Built for India's most demanding plants.",
+  lead: "From ISRO launch facilities and nuclear power plants to refineries, cement kilns and distilleries — a selection of clients we have fabricated, erected, lifted and maintained for.",
+  allLabel: "All",
+  filterLabel: "Filter projects by industry",
+  photo: (sector: string) => `Photo: ${sector} project`,
+  ctaTitle: "Planning a project in one of these industries?",
+  cta: "Talk to our engineers",
+};
+
+// ---------- Contact page ----------
+export const contactPage = {
+  eyebrow: "Contact",
+  title: home.enquiry.title,
+  lead: home.enquiry.lead,
+  detailsTitle: "Reach us directly",
+  mapLabel: "Map: workshop & yard location",
+};
