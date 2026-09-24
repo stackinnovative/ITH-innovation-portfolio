@@ -1,9 +1,8 @@
-import { company, home, ui, type ServiceSlug } from "@/content/site";
+import { home, type ServiceSlug } from "@/content/site";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
-import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Section } from "@/components/ui/Section";
-import { sectionIds, whatsappHref } from "@/lib/links";
+import { sectionIds } from "@/lib/links";
 import { ContactDetails } from "./ContactDetails";
 
 type EnquirySectionProps = {
@@ -29,12 +28,7 @@ export function EnquirySection({ defaultService }: EnquirySectionProps) {
         <ContactDetails />
       </div>
 
-      <div className="flex flex-col gap-3">
-        <EnquiryForm defaultService={defaultService} />
-        <Button href={whatsappHref(company.whatsapp)} variant="on-dark" fullWidth className="md:hidden">
-          {ui.chatOnWhatsApp}
-        </Button>
-      </div>
+      <EnquiryForm defaultService={defaultService} />
     </Section>
   );
 }

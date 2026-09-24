@@ -8,7 +8,7 @@ Built by StackInnovative. Goal of the site: **get quote enquiries and phone call
 - Next.js (latest, App Router) + TypeScript (strict)
 - Tailwind CSS (whatever version create-next-app installs; tokens below)
 - Fonts via `next/font/google`: Barlow Condensed (500/600/700), IBM Plex Sans (400/500/600), IBM Plex Mono (500)
-- Enquiry form: Route Handler `app/api/enquiry/route.ts` → email via Resend. Validate with Zod. Honeypot field for spam.
+- Enquiry form: Route Handler `app/api/enquiry/route.ts` → email via Resend. Validate with Zod. Honeypot field for spam. Plus an "Enquire on WhatsApp" button that opens wa.me with the form contents prefilled (no server needed).
 - Images: `next/image`. Placeholders until client sends real photos.
 - Deploy target: Vercel. Every page statically rendered except the API route.
 - No UI kits (no shadcn, MUI, Bootstrap). No animation libraries. Keep the bundle small.
@@ -60,7 +60,7 @@ Built by StackInnovative. Goal of the site: **get quote enquiries and phone call
 
 - Fabrication product filter and projects sector filter: client components, `useState`, buttons with `aria-pressed`.
 - Mobile header: logo + call icon + menu button → full-screen menu. Sticky header on scroll.
-- Enquiry form fields: name, company, phone, email, service (5 options), details, optional drawing upload (PDF/DWG/JPG/PNG, max 10 MB). Show success and error states. Service can be preselected by `?service=` query param.
+- Enquiry form fields: name, company, phone, email, service (5 options), details. **No file upload** (client decision). Show success and error states. Service can be preselected by `?service=` query param.
 - Floating WhatsApp button on mobile. Phone numbers are `tel:` links.
 
 ## Rules

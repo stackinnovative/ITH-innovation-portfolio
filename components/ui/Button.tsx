@@ -33,7 +33,7 @@ export function Button(props: ButtonProps) {
   const { children, variant = "primary", size = "md", arrow = false, fullWidth = false, className, ...rest } = props;
 
   const classes = cn(
-    "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2.5 font-semibold whitespace-nowrap transition-colors",
+    "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2.5 font-semibold whitespace-nowrap transition-colors disabled:cursor-wait disabled:opacity-70",
     variants[variant],
     sizes[size],
     fullWidth && "w-full",

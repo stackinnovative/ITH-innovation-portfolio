@@ -34,6 +34,14 @@ export function CheckIcon({ size = 18, className }: IconProps) {
   );
 }
 
+export function ChatIcon({ size = 18, className }: IconProps) {
+  return (
+    <svg width={size} height={size} strokeWidth={2} className={className} {...common}>
+      <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.8 8.8 0 0 1-3.8-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z" />
+    </svg>
+  );
+}
+
 export function MenuIcon({ size = 22, className }: IconProps) {
   return (
     <svg width={size} height={size} strokeWidth={2} className={className} {...common}>

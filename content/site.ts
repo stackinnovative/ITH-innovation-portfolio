@@ -338,8 +338,9 @@ export const enquiryForm = {
     email: { label: "Email", placeholder: "you@company.com" },
     service: { label: "Service needed" },
     details: { label: "Details", placeholder: "Equipment, weight or size, material, site location, timeline" },
-    drawing: { label: "Attach drawing (PDF / DWG / JPG / PNG, max 10 MB)" },
   },
+  optional: "(optional)",
+  honeypotLabel: "Leave this field empty",
   serviceOptions: {
     fabrication: "Fabrication",
     erection: "Erection",
@@ -348,6 +349,24 @@ export const enquiryForm = {
     "equipment-rental": "Equipment Rental",
   } satisfies Record<ServiceSlug, string>,
   submit: "Send Enquiry",
+  sending: "Sending…",
+  whatsapp: "Enquire on WhatsApp",
+  errors: {
+    name: "Please enter your name.",
+    phone: "Please enter a valid phone number (at least 8 digits).",
+    email: "Please enter a valid email address, or leave it empty.",
+    service: "Please choose a service.",
+    tooLong: "This is too long — please shorten it.",
+    send: `Sorry, we could not send your enquiry. Please try again, or call us on ${company.phone}.`,
+  },
+  success: {
+    title: "Enquiry sent",
+    body: `Thank you — we have your enquiry and will reply within ${company.replyTime}.`,
+    again: "Send another enquiry",
+  },
+  // WhatsApp message and email use the field labels above for each line.
+  whatsappIntro: `Hello ${company.shortName}, I would like a quote.`,
+  emailSubject: "New enquiry",
 };
 
 /** "01 project" / "06 projects" — shown uppercase on sector cards. */
