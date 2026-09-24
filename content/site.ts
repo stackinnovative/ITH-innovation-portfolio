@@ -231,3 +231,126 @@ export const footer = {
   rights: "All rights reserved.",
   gstinLabel: "GSTIN",
 };
+
+// ---------- Home page section copy (from design/Main.dc.html) ----------
+export const home = {
+  hero: {
+    secondaryCta: `Our ${services.length} Services`,
+    photos: { main: "Photo: large vessel being erected at site", secondary: "Photo: fabrication shop floor" },
+  },
+  clientStripLabel: "Projects delivered for",
+  services: {
+    eyebrow: "Our services",
+    title: "Five services. One team on your site.",
+    lead: "Hire us for one job, or for the whole cycle — we make it, install it, move it, keep it running, and supply the kit.",
+    cardCta: "Learn more",
+    photos: {
+      fabrication: "Photo: workshop",
+      erection: "Photo: site erection",
+      "heavy-equipment-handling": "Photo: crane lift",
+      "operation-maintenance": "Photo: shutdown crew",
+      "equipment-rental": "Photo: equipment yard",
+    } satisfies Record<ServiceSlug, string>,
+  },
+  fabrication: {
+    eyebrow: "Service 01 · Fabrication",
+    title: `${products.length} products. Built to your drawing.`,
+    lead: "Process equipment, storage and structures in MS and SS — made in our workshop, tested, and ready for site.",
+    allLabel: "All",
+    filterLabel: "Filter products by category",
+    ctaTitle: "Have a drawing or spec sheet?",
+    ctaBody: "Send it with size, material and quantity. We quote from the drawing. [IBR pressure parts — CONFIRM IF STILL OFFERED]",
+    cta: "Get a fabrication quote",
+  },
+  erection: {
+    eyebrow: "Service 02 · Erection",
+    title: "From workshop to foundation. Installed right.",
+    lead: "We erect what we fabricate — and what others fabricate. Our own crew, lifting gear and supervision on site.",
+    stepsLabel: "How a job runs",
+    photos: {
+      main: "Photo: tank / structure erection with derrick",
+      left: "Photo: chimney erection",
+      right: "Photo: shed / PEB structure",
+    },
+  },
+  handling: {
+    eyebrow: "Service 03 · Heavy Equipment Handling",
+    title: "Heavy loads moved safely. Inside the plant or across the state.",
+    lead: "Lifting, jacking, skidding, shifting and transport of heavy machinery and equipment — planned, rigged and moved by our own team.",
+    scopeLabel: "What we handle",
+    fleetLabel: "Our fleet",
+    fleetPhoto: "Photo",
+    cta: "Plan a lift or shift",
+  },
+  om: {
+    eyebrow: "Service 04 · Operation & Maintenance",
+    title: "Shutdowns done on schedule.",
+    lead: "We take on O&M contracts, emergency shutdowns and annual shutdowns — with our own crew, tools and cranes, so your plant is back online faster.",
+    plantsLabel: "Plants we maintain",
+    photo: "Photo: shutdown crew inside kiln / boiler",
+    cta: "Plan a shutdown",
+  },
+  rental: {
+    eyebrow: "Service 05 · Equipment Rental",
+    title: "Rent the kit. Skip the capex.",
+    lead: "Lifting, welding, cutting and site equipment — the same kit our own crews use, maintained in our yard.",
+    termsTitle: "Rental terms",
+    cta: "Check availability",
+  },
+  industries: {
+    eyebrow: "Industries served",
+    title: "From launch pads to distilleries.",
+    cta: (projectCount: number) => `View all ${projectCount} projects`,
+    // Short client list shown on each sector card.
+    samples: {
+      Aerospace: "ISRO",
+      "Nuclear Power": "Kudankulam NPP, Kalpakkam APP",
+      "Thermal Power": "NLC, BGR Energy, Lanco",
+      Cement: "ACC, UltraTech (L&T)",
+      Chemical: "Coromandel, Kamar, Krishna",
+      "Water & Effluent": "Quality Water Management",
+      "Hydrocarbon & Refineries": "Andhra Petrochemicals, Airoil-Flaregas",
+      "Carbon & Carbon Black": "Epsilon, Phillips Carbon",
+      "Sugar & Distilleries": "Kothari Sugars, Shaw Wallace",
+      Steel: "Kanishk, VKG, SISCOL",
+      Textile: "Loyal Textile, Valli Mills",
+      "Pharma & Drugs": "Malladi, Aswini Bio-Pharma",
+      Glass: "Saint-Gobain Glass India",
+      Automobile: "Hyundai, Ford, Visteon",
+      "Heavy Engineering": "L&T, Chennai Harbour",
+    } as Record<string, string>,
+  },
+  enquiry: {
+    eyebrow: "Request a quote",
+    title: "Tell us what the job is.",
+    lead: `Share your drawing, lift details or shutdown scope. We reply within ${company.replyTime}.`,
+  },
+};
+
+// ---------- Enquiry form ----------
+export const enquiryForm = {
+  fields: {
+    name: { label: "Name", placeholder: "Your name" },
+    company: { label: "Company", placeholder: "Company name" },
+    phone: { label: "Phone", placeholder: "+91" },
+    email: { label: "Email", placeholder: "you@company.com" },
+    service: { label: "Service needed" },
+    details: { label: "Details", placeholder: "Equipment, weight or size, material, site location, timeline" },
+    drawing: { label: "Attach drawing (PDF / DWG / JPG / PNG, max 10 MB)" },
+  },
+  serviceOptions: {
+    fabrication: "Fabrication",
+    erection: "Erection",
+    "heavy-equipment-handling": "Heavy Equipment Handling",
+    "operation-maintenance": "Operation & Maintenance / shutdown",
+    "equipment-rental": "Equipment Rental",
+  } satisfies Record<ServiceSlug, string>,
+  submit: "Send Enquiry",
+};
+
+/** "01 project" / "06 projects" — shown uppercase on sector cards. */
+export const projectCountLabel = (n: number) =>
+  `${String(n).padStart(2, "0")} ${n === 1 ? "project" : "projects"}`;
+
+/** Total client projects across all sectors (59). */
+export const totalProjects = sectors.reduce((sum, s) => sum + s.clients.length, 0);

@@ -26,6 +26,14 @@ export function PhoneIcon({ size = 22, className }: IconProps) {
   );
 }
 
+export function CheckIcon({ size = 18, className }: IconProps) {
+  return (
+    <svg width={size} height={size} strokeWidth={2.2} className={className} {...common}>
+      <path d="M5 12l5 5 9-10" />
+    </svg>
+  );
+}
+
 export function MenuIcon({ size = 22, className }: IconProps) {
   return (
     <svg width={size} height={size} strokeWidth={2} className={className} {...common}>

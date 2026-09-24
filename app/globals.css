@@ -17,6 +17,12 @@
   --color-accent-hover: #8e330a;
   --color-accent-on-dark: #f08a55;
 
+  /* Extra shades used in design/Main.dc.html */
+  --color-line-strong: #b8b2a6; /* decorative chip borders */
+  --color-field-border: #8c8578; /* input borders — design #B8B2A6 darkened to 3.7:1 */
+  --color-line-dark-strong: #454d56;
+  --color-steel-raised: #242a30;
+
   /* Footer-only shades from design/Main.dc.html */
   --color-footer-muted: #8a9199;
   --color-footer-line: #2a2f35;

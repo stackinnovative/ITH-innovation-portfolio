@@ -9,6 +9,12 @@ export const serviceAnchors: Record<ServiceSlug, string> = {
   "equipment-rental": "rental",
 };
 
+export const sectionIds = {
+  services: "services",
+  industries: "industries",
+  contact: "contact",
+} as const;
+
 export const routes = {
   home: "/",
   projects: "/projects",
