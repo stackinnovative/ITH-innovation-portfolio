@@ -32,7 +32,7 @@ export function ErectionSection() {
           eyebrow={copy.eyebrow}
           title={copy.title}
           lead={copy.lead}
-          leadClassName="md:text-lg"
+          leadSize="lg"
         />
 
         <ul className="m-0 grid list-none border-t-2 border-ink p-0 sm:grid-cols-2 sm:gap-x-8">

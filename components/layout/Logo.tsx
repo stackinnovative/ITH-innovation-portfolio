@@ -4,7 +4,7 @@ import { brand, company } from "@/content/site";
 /** Phone: "ITH INNOVATION Pvt Ltd." · tablet/laptop: "ITH INNOVATION" · 1440+: "ITH INNOVATION Private Limited". */
 export function Logo() {
   return (
-    <Link href="/" aria-label={`${company.name} — home`} className="flex shrink-0 items-center gap-2.5 text-ink md:gap-3">
+    <Link href="/" aria-label={`${company.name} — home`} className="flex min-h-11 shrink-0 items-center gap-2.5 text-ink md:gap-3">
       <span
         aria-hidden="true"
         className="flex size-9 items-center justify-center bg-ink font-display text-lg font-bold text-white md:size-11 md:text-[22px]"

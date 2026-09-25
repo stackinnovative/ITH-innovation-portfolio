@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
 import { projectsPage, sectors, ui } from "@/content/site";
 import { SectorCard } from "@/components/projects/SectorCard";
 import { SectorFilter } from "@/components/projects/SectorFilter";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { PageHero } from "@/components/sections/PageHero";
 import { routes } from "@/lib/links";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: ui.projects,
-  description: projectsPage.lead,
-};
+export const metadata = pageMetadata({ title: ui.projects, description: projectsPage.lead, path: routes.projects });
 
 export default function ProjectsPage() {
   return (

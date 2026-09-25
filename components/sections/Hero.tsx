@@ -39,7 +39,7 @@ export function Hero() {
               </Eyebrow>
               <div className="flex flex-col gap-2">
                 <p className="m-0 font-display text-[30px] leading-[1.05] font-semibold">{hero.shutdownCard.title}</p>
-                <a href={telHref(company.phone)} className="text-[15px] text-on-dark hover:text-white">
+                <a href={telHref(company.phone)} className="inline-flex min-h-11 items-center text-[15px] text-on-dark hover:text-white">
                   {ui.call} {company.phone}
                 </a>
               </div>

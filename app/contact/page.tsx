@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { company, contactPage, ui } from "@/content/site";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { ContactDetails } from "@/components/sections/ContactDetails";
@@ -7,12 +6,10 @@ import { Button } from "@/components/ui/Button";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { Section } from "@/components/ui/Section";
 import { PhoneIcon } from "@/components/ui/icons";
-import { telHref, whatsappHref } from "@/lib/links";
+import { routes, telHref, whatsappHref } from "@/lib/links";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: ui.contact,
-  description: contactPage.lead,
-};
+export const metadata = pageMetadata({ title: ui.contact, description: contactPage.lead, path: routes.contact });
 
 export default function ContactPage() {
   return (

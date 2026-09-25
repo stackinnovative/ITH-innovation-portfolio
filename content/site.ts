@@ -402,3 +402,10 @@ export const contactPage = {
   detailsTitle: "Reach us directly",
   mapLabel: "Map: workshop & yard location",
 };
+
+// ---------- SEO ----------
+export const seo = {
+  homeTitle: `${company.name} — Fabrication, Erection, Heavy Equipment Handling, O&M & Equipment Rental`,
+  locale: "en_IN",
+  ogImageAlt: `${company.name} — ${hero.title}`,
+};

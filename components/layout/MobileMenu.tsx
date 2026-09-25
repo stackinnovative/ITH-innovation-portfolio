@@ -120,7 +120,7 @@ export function MobileMenu({ logo }: MobileMenuProps) {
                 </Eyebrow>
               </dt>
               <dd className="m-0">
-                <a href={mailHref(company.email)} className="text-lg font-medium text-white hover:text-accent-on-dark">
+                <a href={mailHref(company.email)} className="inline-flex min-h-11 items-center text-lg font-medium text-white hover:text-accent-on-dark">
                   {company.email}
                 </a>
               </dd>

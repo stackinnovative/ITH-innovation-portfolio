@@ -5,17 +5,17 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { mailHref, routes, serviceHref, telHref } from "@/lib/links";
 
-// 44px rows on phones (touch targets), tighter on desktop to match the design.
-const rowClass = "flex min-h-11 items-center md:min-h-8";
-const linkClass = "inline-flex min-h-11 items-center text-on-dark hover:text-white md:min-h-8";
+// 44px rows everywhere (touch targets, tablets included).
+const rowClass = "flex min-h-11 items-center";
+const linkClass = "inline-flex min-h-11 items-center text-on-dark hover:text-white";
 
 function Column({ heading, children }: { heading: string; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-2 md:gap-3">
-      <Eyebrow size="sm" className="text-footer-muted">
+      <Eyebrow tone="footer" size="sm">
         {heading}
       </Eyebrow>
-      <ul className="m-0 flex list-none flex-col p-0 text-[15px] md:gap-1">{children}</ul>
+      <ul className="m-0 flex list-none flex-col p-0 text-[15px]">{children}</ul>
     </div>
   );
 }

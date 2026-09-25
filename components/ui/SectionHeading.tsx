@@ -11,6 +11,8 @@ type SectionHeadingProps = {
   /** split: heading left, lead right (bottom-aligned) on desktop. stack: everything in one column. */
   layout?: "split" | "stack";
   as?: "h1" | "h2";
+  /** Lead text size from tablet up: 17px (default) or 18px. */
+  leadSize?: "md" | "lg";
   id?: string;
   className?: string;
   titleClassName?: string;
@@ -24,6 +26,7 @@ export function SectionHeading({
   tone = "light",
   layout = "split",
   as: Heading = "h2",
+  leadSize = "md",
   id,
   className,
   titleClassName,
@@ -55,7 +58,8 @@ export function SectionHeading({
       {lead ? (
         <p
           className={cn(
-            "m-0 text-base leading-[1.6] md:text-[17px]",
+            "m-0 text-base leading-[1.6]",
+            leadSize === "lg" ? "md:text-lg" : "md:text-[17px]",
             dark ? "text-on-dark" : "text-body",
             layout === "split" && "lg:max-w-[460px]",
             leadClassName,

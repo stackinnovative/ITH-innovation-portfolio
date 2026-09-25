@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { company, hero, ui } from "@/content/site";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { UtilityBar } from "@/components/layout/UtilityBar";
+import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const barlow = Barlow_Condensed({
@@ -24,10 +26,16 @@ const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
 });
 
-// Per-page titles and Open Graph come in Phase 5.
+// Defaults only — each page sets its own title/description/Open Graph via lib/metadata.ts.
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: { default: company.name, template: `%s | ${company.shortName}` },
   description: hero.body,
+  applicationName: company.name,
+};
+
+export const viewport: Viewport = {
+  themeColor: "#15171a",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -46,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

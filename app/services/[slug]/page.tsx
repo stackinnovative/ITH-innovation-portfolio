@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ComponentType } from "react";
-import { company, serviceLongTitles, servicePage, services, ui, type ServiceSlug } from "@/content/site";
+import { company, home, serviceLongTitles, servicePage, services, ui, type ServiceSlug } from "@/content/site";
 import { EnquirySection } from "@/components/sections/EnquirySection";
 import { ErectionSection } from "@/components/sections/ErectionSection";
 import { FabricationSection } from "@/components/sections/FabricationSection";
@@ -11,7 +11,8 @@ import { OmSection } from "@/components/sections/OmSection";
 import { PageHero } from "@/components/sections/PageHero";
 import { RentalSection } from "@/components/sections/RentalSection";
 import { Button } from "@/components/ui/Button";
-import { sectionIds, telHref } from "@/lib/links";
+import { sectionIds, serviceHref, telHref } from "@/lib/links";
+import { pageMetadata } from "@/lib/metadata";
 
 // The matching home-page section is the body of each service page.
 const bodies: Record<ServiceSlug, ComponentType> = {
@@ -20,6 +21,15 @@ const bodies: Record<ServiceSlug, ComponentType> = {
   "heavy-equipment-handling": HandlingSection,
   "operation-maintenance": OmSection,
   "equipment-rental": RentalSection,
+};
+
+// Meta description: the one-line summary plus the section lead.
+const leads: Record<ServiceSlug, string> = {
+  fabrication: home.fabrication.lead,
+  erection: home.erection.lead,
+  "heavy-equipment-handling": home.handling.lead,
+  "operation-maintenance": home.om.lead,
+  "equipment-rental": home.rental.lead,
 };
 
 // Only the five services exist; anything else is a 404.
@@ -36,7 +46,11 @@ function getService(slug: string) {
 export async function generateMetadata({ params }: PageProps<"/services/[slug]">): Promise<Metadata> {
   const service = getService((await params).slug);
   if (!service) return {};
-  return { title: serviceLongTitles[service.slug], description: service.summary };
+  return pageMetadata({
+    title: serviceLongTitles[service.slug],
+    description: `${service.summary} ${leads[service.slug]}`,
+    path: serviceHref(service.slug),
+  });
 }
 
 export default async function ServicePage({ params }: PageProps<"/services/[slug]">) {

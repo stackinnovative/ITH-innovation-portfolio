@@ -6,6 +6,7 @@ const tones = {
   "on-dark": "text-accent-on-dark",
   muted: "text-muted",
   "on-dark-muted": "text-on-dark-muted",
+  footer: "text-footer-muted",
 };
 
 const sizes = {

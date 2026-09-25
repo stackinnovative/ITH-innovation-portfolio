@@ -24,7 +24,7 @@ export function OmSection() {
           eyebrow={copy.eyebrow}
           title={copy.title}
           lead={copy.lead}
-          leadClassName="md:text-lg"
+          leadSize="lg"
         />
 
         <ul className="m-0 grid list-none gap-3 p-0 sm:grid-cols-3">

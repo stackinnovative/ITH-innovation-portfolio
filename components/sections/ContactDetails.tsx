@@ -13,7 +13,7 @@ type ContactDetailsProps = {
 export function ContactDetails({ tone = "dark", className }: ContactDetailsProps) {
   const dark = tone === "dark";
   const linkClass = cn(
-    "text-xl font-medium",
+    "inline-flex min-h-11 items-center text-xl font-medium",
     dark ? "text-white hover:text-accent-on-dark" : "text-ink hover:text-accent",
   );
 
