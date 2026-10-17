@@ -9,6 +9,7 @@ import { HandlingSection } from "@/components/sections/HandlingSection";
 import { IndustriesStrip } from "@/components/sections/IndustriesStrip";
 import { OmSection } from "@/components/sections/OmSection";
 import { PageHero } from "@/components/sections/PageHero";
+import { RentalFleetSection } from "@/components/sections/RentalFleetSection";
 import { RentalSection } from "@/components/sections/RentalSection";
 import { Button } from "@/components/ui/Button";
 import { sectionIds, serviceHref, telHref } from "@/lib/links";
@@ -72,6 +73,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
         </div>
       </PageHero>
       <Body />
+      {service.slug === "equipment-rental" && <RentalFleetSection />}
       <IndustriesStrip />
       <EnquirySection defaultService={service.slug} />
     </>

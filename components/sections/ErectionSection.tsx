@@ -1,6 +1,6 @@
 import { erection, home } from "@/content/site";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { Photo } from "@/components/ui/Photo";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CheckIcon } from "@/components/ui/icons";
@@ -18,10 +18,10 @@ export function ErectionSection() {
     >
       {/* Photos sit left on desktop, after the text on phones. */}
       <div className="order-last flex flex-col gap-3 md:gap-4 lg:order-none">
-        <PhotoPlaceholder label={copy.photos.main} className="h-[240px] md:h-[420px]" />
+        <Photo photo={copy.photos.main} sizes="(min-width: 1024px) 40vw, 100vw" className="h-[240px] md:h-[420px]" />
         <div className="grid grid-cols-2 gap-3 md:gap-4">
-          <PhotoPlaceholder label={copy.photos.left} className="h-[140px] md:h-[180px]" />
-          <PhotoPlaceholder label={copy.photos.right} className="h-[140px] md:h-[180px]" />
+          <Photo photo={copy.photos.left} sizes="(min-width: 1024px) 20vw, 50vw" className="h-[140px] md:h-[180px]" />
+          <Photo photo={copy.photos.right} sizes="(min-width: 1024px) 20vw, 50vw" className="h-[140px] md:h-[180px]" />
         </div>
       </div>
 

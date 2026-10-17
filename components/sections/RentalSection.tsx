@@ -1,12 +1,14 @@
-import { home, rentalTerms, rentalTools } from "@/content/site";
+import { home, rentalTerms } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/cn";
 import { sectionIds, serviceAnchors } from "@/lib/links";
+import { getRentalProducts } from "@/lib/rental";
 
-export function RentalSection() {
+export async function RentalSection() {
   const copy = home.rental;
+  const rentalProducts = await getRentalProducts();
 
   return (
     <Section
@@ -20,10 +22,10 @@ export function RentalSection() {
 
       <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
         <ul className="m-0 grid list-none content-start border-t-2 border-ink p-0 sm:grid-cols-2 sm:gap-x-10">
-          {rentalTools.map((tool) => (
-            <li key={tool.name} className="flex items-baseline justify-between gap-4 border-b border-line py-4">
-              <span className="text-base font-medium">{tool.name}</span>
-              <span className="text-right font-mono text-[13px] font-medium text-muted">{tool.spec}</span>
+          {rentalProducts.map((product) => (
+            <li key={product.name} className="flex items-baseline justify-between gap-4 border-b border-line py-4">
+              <span className="text-base font-medium">{product.name}</span>
+              <span className="text-right font-mono text-[13px] font-medium text-muted">{product.spec ?? product.category}</span>
             </li>
           ))}
         </ul>

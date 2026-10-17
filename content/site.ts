@@ -16,7 +16,7 @@ export const company = {
 };
 
 export const hero = {
-  eyebrow: "Fabricate · Erect · Lift · Maintain · Rent",
+  eyebrow: "Erection · Fabrication · O&M (Operation And Maintenance) · Rental",
   title: "We build the steel that keeps plants running.",
   body: "We fabricate equipment and structures, erect them at site, move and lift heavy loads, maintain running plants, and rent out the tools to do it — one team, start to finish.",
   stats: [
@@ -49,7 +49,7 @@ export const services: {
   { num: "04", slug: "operation-maintenance", title: "O&M", navLabel: "O&M",
     summary: "O&M contracts plus emergency and annual shutdowns for process plants." },
   { num: "05", slug: "equipment-rental", title: "Equipment Rental", navLabel: "Equipment Rental",
-    summary: "Winches, jacks, welding sets, rolling machines and site kit on hire." },
+    summary: "Cranes, winches, boom lifts and scaffolding on hire." },
 ];
 
 // ---------- 01 Fabrication ----------
@@ -138,32 +138,26 @@ export const om = {
 };
 
 // ---------- 05 Equipment Rental ----------
-export const rentalTools: { name: string; spec: string }[] = [
-  { name: "Motorised Winches", spec: "up to 100 T" },
-  { name: "Hydraulic Jacks", spec: "up to 400 T" },
-  { name: "Tank Jacks", spec: "2.5 m / 12 T" },
-  { name: "Chain Pulley Blocks", spec: "up to 10 T" },
-  { name: "Wire Rope Pulleys", spec: "up to 5 sheave" },
-  { name: "Derricks / Leading Beams", spec: "—" },
-  { name: "Skid Rollers", spec: "—" },
-  { name: "Hydraulic Power Packs", spec: "—" },
-  { name: "Rolling Machine", spec: "up to 36 mm · MS/SS" },
-  { name: "Plasma Cutting Machine", spec: "—" },
-  { name: "Radial Drilling Machine", spec: "—" },
-  { name: "Air Compressor", spec: "up to 40 HP" },
-  { name: "Welding Generators", spec: "K320" },
-  { name: "Welding Rectifiers", spec: "MIG / TIG" },
-  { name: "Welding Inverters", spec: "—" },
-  { name: "Fabrication Tools", spec: "full set" },
-  { name: "Site Containers", spec: "office / stairs" },
-  { name: "CC Cribs / Sleepers / Rails", spec: "—" },
-];
-
 export const rentalTerms = [
   { label: "Hire period", value: "Daily · Weekly · Monthly" },
   { label: "Operator", value: "[With / without — CONFIRM]" },
   { label: "Delivery", value: "[To site — CONFIRM]" },
-  { label: "Cranes & boom lifts", value: "Also on hire" },
+];
+
+// Equipment on hire. Feeds both the rental list and the "On hire" photo cards.
+// The client manages this list in Sanity (see lib/rental.ts); this copy is the seed data and the
+// fallback used when Sanity is not configured or unreachable.
+// `fit: "contain"` for cut-out product shots on white. `spec` is optional (e.g. "up to 100 T").
+export type RentalProduct = { name: string; category: string; spec?: string; image: string; fit: "cover" | "contain" };
+
+export const rentalProductsFallback: RentalProduct[] = [
+  { name: "Crawler Crane", category: "Cranes", image: "/images/rental/crawler-crane.jpg", fit: "contain" },
+  { name: "Tyre Mounted Crane", category: "Cranes", image: "/images/rental/tyre-mounted-crane.jpg", fit: "cover" },
+  { name: "Ferana", category: "Cranes", image: "/images/rental/ferana.jpg", fit: "contain" },
+  { name: "Winch Machine", category: "Lifting", image: "/images/rental/winch-machine.jpg", fit: "contain" },
+  { name: "Boom Lift", category: "Access", image: "/images/rental/boom-lift.jpg", fit: "cover" },
+  { name: "Movable Trolley", category: "Access", image: "/images/rental/movable-trolley.jpg", fit: "cover" },
+  { name: "Cuplock Scaffolding", category: "Access", image: "/images/rental/cuplock-scaffolding.jpg", fit: "cover" },
 ];
 
 // ---------- Projects ----------
@@ -234,11 +228,27 @@ export const footer = {
   gstinLabel: "GSTIN",
 };
 
+// ---------- Site photos (public/images/work) ----------
+// A photo slot is either a real photo or a "Photo: …" placeholder label until the client sends one.
+// `position` = CSS object-position when the default centre crop cuts off the subject.
+export type SitePhoto = { src: string; alt: string; position?: string };
+
+const workPhotos = {
+  millTandemLift: { src: "/images/work/mill-tandem-lift.jpg", alt: "Tandem crane lift of a large rotating mill shell at site" },
+  coneLift: { src: "/images/work/cone-lift.jpg", alt: "Large steel cone lifted by crawler crane beside a plant structure", position: "50% 40%" },
+  coneLiftStructure: { src: "/images/work/cone-lift-structure.jpg", alt: "Steel cone lifted over the top of a plant structure by crawler crane", position: "50% 35%" },
+  coneRigging: { src: "/images/work/cone-rigging.jpg", alt: "Crew rigging a steel cone for lifting", position: "50% 70%" },
+  kilnShellLift: { src: "/images/work/kiln-shell-lift.jpg", alt: "Kiln shell section lifted into place beside a building" },
+  kilnLiftPiers: { src: "/images/work/kiln-lift-piers.jpg", alt: "Kiln section lifted onto its piers by mobile crane" },
+  kilnTransport: { src: "/images/work/kiln-transport-trailer.jpg", alt: "Kiln shell moved through the plant on hydraulic trailers" },
+  crawlerCraneLift: { src: "/images/work/crawler-crane-lift.jpg", alt: "Crawler crane lifting a kiln section at site", position: "50% 75%" },
+} satisfies Record<string, SitePhoto>;
+
 // ---------- Home page section copy (from design/Main.dc.html) ----------
 export const home = {
   hero: {
     secondaryCta: `Our ${services.length} Services`,
-    photos: { main: "Photo: large vessel being erected at site", secondary: "Photo: fabrication shop floor" },
+    photos: { main: workPhotos.millTandemLift, secondary: workPhotos.coneLift },
   },
   clientStripLabel: "Projects delivered for",
   services: {
@@ -248,11 +258,11 @@ export const home = {
     cardCta: "Learn more",
     photos: {
       fabrication: "Photo: workshop",
-      erection: "Photo: site erection",
-      "heavy-equipment-handling": "Photo: crane lift",
+      erection: workPhotos.kilnLiftPiers,
+      "heavy-equipment-handling": workPhotos.kilnTransport,
       "operation-maintenance": "Photo: shutdown crew",
-      "equipment-rental": "Photo: equipment yard",
-    } satisfies Record<ServiceSlug, string>,
+      "equipment-rental": workPhotos.crawlerCraneLift,
+    } satisfies Record<ServiceSlug, SitePhoto | string>,
   },
   fabrication: {
     eyebrow: "Service 01 · Fabrication",
@@ -270,9 +280,9 @@ export const home = {
     lead: "We erect what we fabricate — and what others fabricate. Our own crew, lifting gear and supervision on site.",
     stepsLabel: "How a job runs",
     photos: {
-      main: "Photo: tank / structure erection with derrick",
-      left: "Photo: chimney erection",
-      right: "Photo: shed / PEB structure",
+      main: workPhotos.coneLiftStructure,
+      left: workPhotos.coneRigging,
+      right: workPhotos.kilnShellLift,
     },
   },
   handling: {
@@ -295,9 +305,14 @@ export const home = {
   rental: {
     eyebrow: "Service 05 · Equipment Rental",
     title: "Rent the kit. Skip the capex.",
-    lead: "Lifting, welding, cutting and site equipment — the same kit our own crews use, maintained in our yard.",
+    lead: "Cranes, lifting and access equipment — the same kit our own crews use, maintained in our yard.",
     termsTitle: "Rental terms",
     cta: "Check availability",
+    fleetEyebrow: "On hire",
+    fleetTitle: "Cranes, lifts and access equipment.",
+    fleetLead: "Available for your site on daily, weekly or monthly hire. Ask us for capacities and availability.",
+    fleetCta: "Enquire",
+    fleetCtaLabel: (name: string) => ` about ${name}`,
   },
   industries: {
     eyebrow: "Industries served",

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { home, services } from "@/content/site";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { Photo } from "@/components/ui/Photo";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowRightIcon } from "@/components/ui/icons";
@@ -25,7 +25,11 @@ export function ServicesOverview() {
               href={serviceHref(s.slug)}
               className="group flex w-full flex-col border border-line bg-paper text-ink hover:border-ink"
             >
-              <PhotoPlaceholder label={copy.photos[s.slug]} className="h-[140px] md:h-[180px]" />
+              <Photo
+                photo={copy.photos[s.slug]}
+                sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="h-[140px] md:h-[180px]"
+              />
               <div className="flex grow flex-col gap-2.5 p-5 md:gap-3 md:p-6">
                 <div className="flex items-baseline gap-3 md:flex-col md:items-start">
                   <span className="font-mono text-xs font-medium text-accent md:text-[13px]">{s.num}</span>

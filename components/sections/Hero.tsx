@@ -2,7 +2,7 @@ import { company, hero, home, ui } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { Photo } from "@/components/ui/Photo";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import { cn } from "@/lib/cn";
 import { sectionIds, telHref } from "@/lib/links";
@@ -31,8 +31,13 @@ export function Hero() {
           </div>
 
           <div className="grid gap-3 md:grid-cols-2 md:grid-rows-[380px_220px] lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:self-center">
-            <PhotoPlaceholder label={home.hero.photos.main} className="h-[220px] md:col-span-2 md:h-auto" />
-            <PhotoPlaceholder label={home.hero.photos.secondary} className="max-md:hidden" />
+            <Photo
+              photo={home.hero.photos.main}
+              preload
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="h-[220px] md:col-span-2 md:h-auto"
+            />
+            <Photo photo={home.hero.photos.secondary} sizes="(min-width: 1024px) 25vw, 50vw" className="max-md:hidden" />
             <div data-surface="dark" className="flex flex-col justify-between gap-6 bg-ink p-7 text-white max-md:hidden">
               <Eyebrow tone="on-dark" size="sm">
                 {hero.shutdownCard.eyebrow}
