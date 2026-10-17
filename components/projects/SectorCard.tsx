@@ -1,15 +1,19 @@
-import { projectCountLabel, projectsPage } from "@/content/site";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { projectCountLabel, projectsPage, type SitePhoto } from "@/content/site";
+import { Photo } from "@/components/ui/Photo";
 import { ArrowRightIcon } from "@/components/ui/icons";
 
 type SectorCardProps = {
-  sector: { name: string; clients: string[] };
+  sector: { name: string; clients: string[]; photo?: SitePhoto };
 };
 
 export function SectorCard({ sector }: SectorCardProps) {
   return (
     <article className="flex flex-col border border-line bg-paper">
-      <PhotoPlaceholder label={projectsPage.photo(sector.name)} className="h-40" />
+      <Photo
+        photo={sector.photo ?? projectsPage.photo(sector.name)}
+        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        className="h-40"
+      />
       <div className="flex flex-col gap-4 px-5 pt-6 pb-7 md:px-7">
         <div className="flex items-baseline justify-between gap-3">
           <h2 className="m-0 font-display text-[26px] leading-[1.05] font-bold uppercase md:text-[28px]">{sector.name}</h2>

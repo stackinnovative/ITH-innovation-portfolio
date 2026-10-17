@@ -1,15 +1,13 @@
 import Image from "next/image";
-import { home } from "@/content/site";
+import { home, rentalProducts } from "@/content/site";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/cn";
 import { sectionIds } from "@/lib/links";
-import { getRentalProducts } from "@/lib/rental";
 
 /** Photo grid of hire equipment (managed in Sanity) — only on the equipment rental service page. */
-export async function RentalFleetSection() {
+export function RentalFleetSection() {
   const copy = home.rental;
-  const rentalProducts = await getRentalProducts();
   if (rentalProducts.length === 0) return null;
 
   return (

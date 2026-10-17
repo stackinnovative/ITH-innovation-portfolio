@@ -1,7 +1,7 @@
 import { handling, home } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { Photo } from "@/components/ui/Photo";
 import { Section } from "@/components/ui/Section";
 import { sectionIds, serviceAnchors } from "@/lib/links";
 
@@ -58,7 +58,12 @@ export function HandlingSection() {
           <ul className="m-0 flex list-none flex-col gap-4 p-0">
             {handling.fleet.map((v) => (
               <li key={v.name} className="flex border border-line-dark bg-steel-raised">
-                <PhotoPlaceholder dark label={`${copy.fleetPhoto}: ${v.name}`} className="h-[120px] w-[120px] shrink-0 sm:w-[170px]" />
+                <Photo
+                  dark
+                  photo={v.photo ?? `${copy.fleetPhoto}: ${v.name}`}
+                  sizes="170px"
+                  className="h-[120px] w-[120px] shrink-0 sm:w-[170px]"
+                />
                 <div className="flex flex-col justify-center gap-1.5 px-5 py-5 md:px-6">
                   <h3 className="m-0 font-display text-[22px] font-bold uppercase md:text-[26px]">{v.name}</h3>
                   <span className="text-sm text-on-dark-muted">{v.spec}</span>

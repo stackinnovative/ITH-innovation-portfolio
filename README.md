@@ -35,17 +35,27 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Rental equipment CMS (Sanity)
+## Content (Sanity CMS)
 
-The client adds, edits and removes rental equipment in Sanity Studio (`studio/`). Everything else on the site is still edited in `content/site.ts`.
-Until `SANITY_PROJECT_ID` is set, the site uses the built-in list in `content/site.ts` (`rentalProductsFallback`).
+All copy, lists and photos are edited by the client in Sanity Studio (`studio/`), deployed at `https://<SANITY_STUDIO_HOST>.sanity.studio`.
+
+How it works:
+
+- `scripts/fetch-content.mjs` runs before every `npm run build` / `npm run dev` (and after `npm install`). It pulls the published content into `content/cms.generated.json` (git-ignored).
+- `content/site.ts` merges that over its `defaults`: any field left empty in the CMS falls back to the default. Components import from `content/site.ts` as before.
+- Publishing in the Studio calls a Vercel **Deploy Hook**, which rebuilds the site (about a minute). The site stays fully static.
+- If Sanity is unreachable during a Vercel build, the build fails and the last good version stays live.
+- Without `SANITY_PROJECT_ID` the site builds from the defaults alone.
+
+**Adding a field:** add it to `defaults` in `content/site.ts` (and the export that uses it), add a matching field (same name) in `studio/schemaTypes/`, then `npm run deploy` in `studio/`. `npm run seed` refuses to run if a default field has no Studio field.
 
 One-time setup:
 
-1. `cd studio && npm install`, then `npx sanity login` and `npx sanity init --env` (or create a project at sanity.io/manage). Copy `studio/.env.example` to `studio/.env` and fill in the project ID.
-2. Load the current 7 items and photos: `npm run seed` (inside `studio/`).
-3. Deploy the editor: `npm run deploy`. The client then logs in at `https://<SANITY_STUDIO_HOST>.sanity.studio`. Invite them under sanity.io/manage → Members (Editor role).
-4. In Vercel, set `SANITY_PROJECT_ID`, `SANITY_DATASET` and `SANITY_REVALIDATE_SECRET`, then redeploy.
-5. In sanity.io/manage → API → Webhooks, add a webhook: URL `https://<site>/api/revalidate`, dataset `production`, trigger on create/update/delete, filter `_type == "rentalProduct"`, HTTP method POST, secret = `SANITY_REVALIDATE_SECRET`.
+1. `cd studio && npm install`, `npx sanity login`, copy `studio/.env.example` to `studio/.env` and fill in the project ID.
+2. `npm run seed` (in `studio/`) loads the defaults and photos into Sanity. Existing documents are never overwritten, so it is safe to re-run.
+3. `npm run deploy` (in `studio/`) publishes the Studio. Invite editors under sanity.io/manage → Members.
+4. Vercel → Settings → Environment Variables: `SANITY_PROJECT_ID`, `SANITY_DATASET`.
+5. Vercel → Settings → Git → **Deploy Hooks**: create one for branch `main` and copy its URL.
+6. sanity.io/manage → API → **Webhooks**: URL = the deploy hook URL, dataset `production`, trigger on create/update/delete, no filter, HTTP method POST.
 
-After that, published changes appear on the site within a few seconds (or within an hour if the webhook fails). The dataset must stay **public** (the default), because the site reads it without a token.
+The dataset must stay **public** (the default): the build reads it without a token.

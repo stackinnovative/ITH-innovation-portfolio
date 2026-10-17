@@ -1,7 +1,7 @@
 import { home, om } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { Photo } from "@/components/ui/Photo";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { sectionIds, serviceAnchors } from "@/lib/links";
@@ -15,7 +15,7 @@ export function OmSection() {
       labelledBy="om-title"
       containerClassName="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16"
     >
-      <PhotoPlaceholder label={copy.photo} className="order-last h-[240px] md:h-[460px] lg:order-none" />
+      <Photo photo={copy.photo} sizes="(min-width: 1024px) 50vw, 100vw" className="order-last h-[240px] md:h-[460px] lg:order-none" />
 
       <div className="flex flex-col gap-6">
         <SectionHeading

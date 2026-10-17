@@ -2,12 +2,12 @@
   "name": "ith-studio",
   "private": true,
   "version": "1.0.0",
-  "description": "Sanity Studio for ITH Innovation — the client edits rental equipment here.",
+  "description": "Sanity Studio for ITH Innovation — the client edits the website content here.",
   "scripts": {
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "seed": "sanity exec scripts/seed-rental.ts --with-user-token"
+    "seed": "sanity exec scripts/seed.ts --with-user-token"
   },
   "dependencies": {
     "react": "19.2.8",

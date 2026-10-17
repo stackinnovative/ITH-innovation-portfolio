@@ -1,14 +1,12 @@
-import { home, rentalTerms } from "@/content/site";
+import { home, rentalProducts, rentalTerms } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/cn";
 import { sectionIds, serviceAnchors } from "@/lib/links";
-import { getRentalProducts } from "@/lib/rental";
 
-export async function RentalSection() {
+export function RentalSection() {
   const copy = home.rental;
-  const rentalProducts = await getRentalProducts();
 
   return (
     <Section

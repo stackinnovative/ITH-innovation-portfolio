@@ -8,6 +8,7 @@ Built by StackInnovative. Goal of the site: **get quote enquiries and phone call
 - Next.js (latest, App Router) + TypeScript (strict)
 - Tailwind CSS (whatever version create-next-app installs; tokens below)
 - Fonts via `next/font/google`: Barlow Condensed (500/600/700), IBM Plex Sans (400/500/600), IBM Plex Mono (500)
+- CMS: Sanity (Studio in `studio/`, read at build time; publish → Vercel deploy hook).
 - Enquiry form: Route Handler `app/api/enquiry/route.ts` → email via Resend. Validate with Zod. Honeypot field for spam. Plus an "Enquire on WhatsApp" button that opens wa.me with the form contents prefilled (no server needed).
 - Images: `next/image`. Placeholders until client sends real photos.
 - Deploy target: Vercel. Every page statically rendered except the API route.
@@ -22,7 +23,8 @@ Built by StackInnovative. Goal of the site: **get quote enquiries and phone call
   - `class="ph"` = a striped photo placeholder. Keep the label text as the image `alt`.
   - Artboards are fixed-size (1440 desktop, 390 mobile). The real site must be **fluid**: max content width 1440px, side padding 64px desktop / 24px tablet / 16px mobile.
 - `design/Main.dc.html` → home page (desktop). `design/Mobile.dc.html` → how home collapses on phones. `design/Projects.dc.html` → /projects.
-- `content/site.ts` = all copy and data. Import from here. **Never hardcode content in components.**
+- Content is edited by the client in **Sanity** (`studio/`). `scripts/fetch-content.mjs` pulls it at build time into `content/cms.generated.json`, merged over the `defaults` in `content/site.ts`. Components import from `content/site.ts`. **Never hardcode content in components.**
+- New content field = add it to `defaults` in `content/site.ts` **and** a same-named field in `studio/schemaTypes/` (see README → Content).
 
 ## Design tokens
 
